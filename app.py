@@ -2,8 +2,10 @@ import streamlit as st
 from fastai.vision.all import *
 import plotly.express as px
 import pathlib
-temp = pathlib.PosixPath
-pathlib.PosixPath = pathlib.WindowsPath
+import platform
+plt = platform.system()
+if plt=='Linux':
+    pathlib.WindowsPath=pathlib.PosixPath
 
 st.title("Bed , Couch va Table larni klassifikatsiya qiluvchi dastur")
 
